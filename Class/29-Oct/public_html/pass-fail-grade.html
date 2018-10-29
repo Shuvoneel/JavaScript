@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pass/Fail with Grade</title>
+    </head>
+    <body style="font-size:18px">
+
+        <h2>Give 3 Subject Number and get Result</h2>
+        <script>
+            var mark = prompt("Enter Obtained Marks:", "");
+            //Suppose Pass Mark of Each Subject 70%
+            var pass = "You're passed!";
+            var fail = "You're failed!";
+            if (mark < 55) {
+                alert(fail + " Grade is D." + "Better Luck Next Time");
+            } else if (mark <= 69) {
+                alert(pass + " and Grade is C");
+            } else if (mark <= 79) {
+                alert(pass + " and Grade is B");
+            } else if (mark <= 82) {
+                alert(pass + " and Grade is B+");
+            } else if (mark <= 86) {
+                alert(pass + " and Grade is A-");
+            } else if (mark <= 100) {
+                alert("Congratulation's !!! You got A+")
+            } else {
+                alert("Invalid Number");
+            }
+        </script>
+        <h1>Best of LUCK!</h1>
+    </body>
+</html> 

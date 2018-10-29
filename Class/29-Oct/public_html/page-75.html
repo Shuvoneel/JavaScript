@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Page 75</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var puppy = "Irish Wolfhound";
+            puppy = puppy.toLowerCase();
+            var found;
+            switch(puppy) {
+                case 'great dane':
+                    alert("Big Guy Breeders have Great Danes");
+                    found = "Big Guy Breeders: 677451";
+                    break;
+                case 'irish wolfhound':
+                    alert("Gentle Giant Breeders have Irish Wolfhound");
+                    found == "Gentle Giant Breeders: 677451";
+                    break;
+                default:
+                    alert("Contact the American Kennel Club for other breeds and breeders.");
+                    found = "American Kennel Club: 677451"
+            }
+            var message = "<p>Be sure to contact them asap";
+            message += "<h2>" + found + "</h2>"
+            document.write(message);
+        </script>
+    </body>
+</html>

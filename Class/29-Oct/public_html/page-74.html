@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Page 74</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var puppy = prompt("What kind of pup would you like?", "");
+            var puppyLC = puppy.toLowerCase();
+            if (puppyLC == "greater swiss mountain dog") {
+                alert("Yes! We have Swissies.");
+            } else if (puppyLC == "great dane") {
+                alert("Yes! We have those big wonderful Great Danes.");
+            } else if (puppyLC == "irish wolfhound") {
+                alert("Yes! We have the Gentle Giants.");
+            } else {
+                alert("Sorry! We only have giant dogs");
+                puppy = "information where to find that breed";
+            }
+            var message = "<p>Come get your <b>" + puppy;
+            message += "</b> at<h3>Goliath\'s Breeders</h3></p>";
+            document.write(message);
+        </script>
+    </body>
+</html>
