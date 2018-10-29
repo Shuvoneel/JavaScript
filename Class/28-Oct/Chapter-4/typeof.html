@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Type Of</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <p id="demo"></p>
+        <script>
+            document.getElementById("demo").innerHTML =
+                    typeof "John" + "<br>" +
+                    typeof 3.14 + "<br>" +
+                    typeof NaN + "<br>" +
+                    typeof false + "<br>" +
+                    typeof [1, 2, 3, 4] + "<br>" +
+                    typeof {name: 'John', age: 34} + "<br>" +
+                    typeof new Date() + "<br>" +
+                    typeof function () {} + "<br>" +
+                    typeof myCar + "<br>" +
+                    typeof null;
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Splice</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var computer = new Array("Doel","Apple","IBM","HP");
+            document.write(computer);
+            document.write("<hr/>");
+            
+            computer.splice(1,0,"DELL");
+            document.write(computer);
+            document.write("<hr/>");
+            
+            computer.splice(1,2,"Lenovo");
+            document.write(computer);
+            document.write("<hr/>");
+            
+            computer.splice(1,3);
+            document.write(computer);
+            document.write("<hr/>");
+        </script>
+    </body>
+</html>

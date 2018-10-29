@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cases in Variables and Functions - Page 17</title>
+        <script>
+            var tax = .05
+            function addTax(item) {
+                var total = item + (item * tax);
+                var newTotal = Math.floor(total);
+                var fraction = Math.round(total * 100) % 100;
+
+                if (fraction < 10) {
+                    fraction = "0" + fraction;
+                }
+                total = newTotal + "" + fraction;
+                alert("Your total is: $" + total);
+
+            }
+        </script>
+    </head>
+<body>
+    <center>
+        <a href="" onclick="addTax(7.22)";>Click for total</a>
+    </center>
+</body>
+</html>

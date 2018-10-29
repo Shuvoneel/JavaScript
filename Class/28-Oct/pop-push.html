@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Pop+Push+Shift</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var computer = new Array("Apple", "IBM");
+            computer.push("HP");//Add in the End of Array
+            document.write(computer);
+            document.write("<hr/>");
+
+            computer.pop("HP");//Remove last element of Array
+            document.write(computer);
+            document.write("<hr/>");
+
+            computer.unshift("DELL");//Add in the Beginning of Array
+            document.write(computer);
+            document.write("<hr/>");
+
+            computer.shift("DELL");//Remove first element of Array
+            document.write(computer);
+            document.write("<hr/>");
+        </script>
+    </body>
+</html>

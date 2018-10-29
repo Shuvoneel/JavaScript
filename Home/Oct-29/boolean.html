@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Page-61</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            //logical and (&&)
+            var alpha = (15 < 20) && ("pen" > "Sword");
+            var beta = ("big" > "tall") && (20 < 30);
+            document.write(alpha + "<br/>" + beta);
+            document.write("<hr/>");
+
+            //logical or (||)
+            var alpha = (56 < 34) || (10 > 2) || ("Fred" > "Alice");
+            document.write(alpha);
+            document.write("<hr/>");
+
+            var alpha = ("beans" > "Potatoes");
+            var beta = (30 > 40);
+            var gamma = alpha || beta;
+            document.write(gamma);
+            document.write("<hr/>");
+
+            //logical not (!)
+            var alpha = 200 / 0;
+            var beta = !isFinite(alpha);
+            var gamma = !(!alpha);
+            var delta = !beta;
+            var b = "<br/>";
+            combine = "alpha=" + alpha + b + "beta=" + beta + b + "gamma=" + gamma + b + "delta=" + delta;
+            document.write(combine);
+        </script>
+    </body>
+</html>

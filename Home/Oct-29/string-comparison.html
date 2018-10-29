@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Page-59</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var alpha = "apples";
+            var beta = "oranges";
+            var gamma = "Apples";
+            var delta = "Oranges";
+            var lclc = beta > alpha;
+            var lcuc = alpha > gamma;
+            var uclc = gamma > alpha;
+            var banner = "<h3>String Comparisons</h3>";
+            var first = beta + " greater than " + alpha + " results in " + lclc + "<p>";
+            var second = alpha + " greater than " + gamma + " results in " + lcuc + "<p>";
+            var third = delta + " greater than " + alpha + " results in " + uclc + "<p>";
+            document.write(banner + first + second + third);
+        </script>
+    </body>
+</html>
