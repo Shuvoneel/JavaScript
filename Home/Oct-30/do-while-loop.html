@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+        <title>D0-While Loop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Print, Sum, Odd-Even, Increment, & Decrement using "Do-While" Loop with Function</h1>
+        <script>
+            //normal print........................................................
+            var a = 1;
+            var b = 10;
+            function printNor(a, b) {
+                do {
+                    document.write("Print: " + a + "<br/>");
+                    a++;
+                } while (a <= b);
+            }
+            printNor(a, b);
+            document.write("<hr/>");
+
+            //general sum.....................................................
+            var i = 1;
+            var j = 10;
+            var sum = 0;
+            function makeSum(i, j) {
+                do {
+                    sum += i;
+                    i++;
+                } while (i <= j);
+                document.write("Total " + "= " + sum + "<br/>");
+            }
+            makeSum(i, j);
+            document.write("<hr/>");
+
+            //print odd-even.........................................................
+            var k = 1;
+            var l = 10;
+            function printOdd(k, l) {
+                do {
+                    if (k % 2 == 1) {
+                        document.write("Odd number: " + k + "<br/>");
+                    } else {
+                        document.write("Even number: " + k + "<br/>");
+                    }
+                    k++;
+                } while (k <= l);
+            }
+            printOdd(k, l);
+            document.write("<hr/>");
+
+            //increment by 3..................................................................
+            var m = 1;
+            var n = 50;
+            function printInc(m, n) {
+                do {
+                    document.write("Increment by 3: " + m + "<br/>");
+                    m += 3;
+                } while (m <= n);
+            }
+            printInc(m, n);
+            document.write("<hr/>");
+
+            //decrement by 5........................................................
+            var s = 50;
+            var t = 1;
+            function printDec(s, t) {
+                do {
+                    document.write("Decrement by 5: " + s + "<br/>");
+                    s -= 5;
+                } while (s >= t);
+            }
+            printDec(s, t);
+        </script>
+    </body>
+</html>

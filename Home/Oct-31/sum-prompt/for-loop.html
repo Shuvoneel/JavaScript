@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>For Loop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Sum using For Loop with Prompt & Function</h1>
+        <script>
+            //general sum without if condition..........................................................................
+            var a = parseInt(prompt("1st num", ""));
+            var b = parseInt(prompt("1st num", ""));
+            var sum = 0;
+            function makeSum(a, b) {
+                for (a; a <= b; a++) {
+                    sum += a;
+                }
+                document.write("Total: " + sum + "<br/>");
+                return sum;
+            }
+            alert(makeSum(a, b));
+            document.write("<hr/>");
+
+            //general sum with if condition..........................................................................
+            var m = parseInt(prompt("1st num", ""));
+            var n = parseInt(prompt("2nd num", ""));
+            var sum = 0;
+            function makeAdd(m, n) {
+                if (m < n) {
+                    for (m; m <= n; m++) {
+                        sum += m;
+                    }
+                } else if (m > n) {
+                    for (m; m >= n; m--) {
+                        sum += m;
+                    }
+                } else if (m == n) {
+                    sum = m;
+                }
+                document.write("Total: " + sum + "<br/>");
+                return sum;
+            }
+            alert(makeAdd(m, n));
+        </script>
+    </body>
+</html>

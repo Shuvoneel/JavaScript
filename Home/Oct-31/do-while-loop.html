@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Do-While Loop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Print, Sum, Odd-Even, Increment, & Decrement using D0-While loop with Function</h1>
+        <script>
+            //normal print from 10 to 1...............................................................
+            var a = 10;
+            var b = 1;
+            function printNor(a, b) {
+                do {
+                    document.write("Print: " + a + "<br/>");
+                    a--;
+                } while (a >= b);
+            }
+            printNor(a, b);
+            document.write("<hr/>");
+
+            //general sum from 100 to 1....................................................
+            var c = 100;
+            var d = 1;
+            var sum = 0;
+            function makeSum(c, d) {
+                do {
+                    sum += c;
+                    c--;
+                } while (c >= d);
+                document.write("Total: " + sum + "<br/>");
+                return sum;
+            }
+            makeSum(c, d);
+            document.write("<hr/>");
+
+            //print odd-even from 50 to 1....................................................
+            var i = 50;
+            var j = 1;
+            function printOdd(i, j) {
+                do {
+                    if (i % 2 == 1) {
+                        document.write("Odd number: " + i + "<br/>");
+                    } else {
+                        document.write("Even number: " + i + "<br/>");
+                    }
+                    i--;
+                } while (i >= j);
+            }
+            printOdd(i, j);
+            document.write("<hr/>");
+
+            //increment by 50 from 1 to 1000..........................................................
+            var m = 1;
+            var n = 1000;
+            function printInc(m, n) {
+                do {
+                    document.write("Increment number: " + m + "<br/>");
+                    m += 50;
+                } while (m <= n);
+            }
+            printInc(m, n);
+            document.write("<hr/>");
+
+            //decrement by 50 from 1000 to 100..........................................................
+            var p = 1000;
+            var q = 100;
+            function printDec(p, q) {
+                do {
+                    document.write("Decrement number: " + p + "<br/>");
+                    p -= 50;
+                } while (p >= q);
+            }
+            printDec(p, q);
+        </script>
+    </body>
+</html>

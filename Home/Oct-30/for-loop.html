@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>For Loop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Print, Sum, Odd-Even, Increment, & Decrement using "For" Loop with Function</h1>
+        <script>
+            //normal print........................................................
+            var s = 1;
+            var t = 10;
+            function printNor(s, t) {
+                for (s; s <= t; s++) {
+                    document.write("Print: " + s + "<br/>");
+                }
+            }
+            printNor(s, t);
+            document.write("<hr/>");
+
+            //general sum.........................................................
+            var sum = 0;
+            var a = 1;
+            var b = 10;
+            function makeSum(a, b) {
+                for (a; a <= b; a++) {
+                    sum += a;
+                }
+                return sum;
+            }
+            document.write("Total " + "= " + makeSum(a, b));
+            document.write("<hr/>");
+
+            //print odd-even................................................................
+            var m = 1;
+            var n = 10;
+            function printOdd(m, n) {
+                for (m; m <= n; m++) {
+                    if (m % 2 == 1) {
+                        document.write("Odd number: " + m + "<br/>");
+                    } else {
+                        document.write("Even number: " + m + "<br/>");
+                    }
+                }
+            }
+            printOdd(m, n);
+            document.write("<hr/>");
+
+            //print increment by 3...................................................................
+            var p = 1;
+            var q = 50;
+            function printInc(p, q) {
+                for (p; p <= q; p += 3) {
+                    document.write("Increment by 3: " + p + "<br/>");
+                }
+            }
+            printInc(p, q);
+            document.write("<hr/>");
+
+            //print decrement by 5.......................................................................
+            var j = 50;
+            var k = 1;
+            function printDec(j, k) {
+                for (j; j >= k; j -= 5) {
+                    document.write("Decrement by 5: " + j + "<br/>");
+                }
+            }
+            printDec(j, k);
+        </script>
+    </body>
+</html>
