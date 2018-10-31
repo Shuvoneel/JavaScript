@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Odd-Even</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Odd-Even using For/While/Do-While Loop</h1>
+        <script>
+            //odd-even using for loop....................
+            var a = 1;
+            var b = 100;
+            function makeF() {
+                for (a; a <= 100; a++) {
+                    if (a % 2 == 1) {
+                        document.write("Odd number: " + a + "<br/>");
+                    } else {
+                        document.write("Even number: " + a + "<br/>");
+                    }
+                }
+            }
+            makeF(a, b);
+            document.write("<hr/>");
+
+            //odd-even using while loop.......................
+            var i = 1;
+            var j = 100;
+            function makeW(i, j) {
+                while (i <= j) {
+                    if (i % 2 == 1) {
+                        document.write("Odd number: " + i + "<br/>");
+                    } else {
+                        document.write("Even number: " + i + "<br/>");
+                    }
+                    i++;
+                }
+            }
+            makeW(i, j);
+            document.write("<hr/>");
+
+            //odd-even using do-while loop.......................
+            var m = 1;
+            var n = 100;
+            function makeD(m, n) {
+                do {
+                    if (m % 2 == 1) {
+                        document.write("Odd number: " + m + "<br/>");
+                    } else {
+                        document.write("Even number: " + m + "<br/>");
+                    }
+                    m++;
+                } while (m <= n);
+            }
+            makeD(m, n);
+        </script>
+    </body>
+</html>

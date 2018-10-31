@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Sum</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Sum using For/While/Do-While Loop</h1>
+        <script>
+            //sum using for loop....................
+            var a = 1;
+            var b = 10;
+            var sum = 0;
+            function printF() {
+                for (a; a <= b; a++) {
+                    sum += a;
+                }
+                document.write("Total: " + sum + "<br/>");
+                return sum;
+            }
+            printF(a, b);
+            document.write("<hr/>");
+            
+            //sum using while loop.........................
+            var i = 10;
+            var j = 1;
+            var sum = 0;
+            function printW() {
+                while (i >= j) {
+                    sum += i;
+                    i--;
+                }
+                document.write("Total: " + sum + "<br/>");
+                return sum;
+            }
+            printW(i, j);
+            document.write("<hr/>");
+            
+            //sum using do-while loop.........................
+            var m = 1;
+            var n = 10;
+            var sum = 0;
+            function printD() {
+                do {
+                    sum += m;
+                    m++;
+                } while (m <= n);
+                document.write("Total: " + sum + "<br/>");
+                return sum;
+            }
+            printD(m, n);
+        </script>
+
+    </body>
+</html>

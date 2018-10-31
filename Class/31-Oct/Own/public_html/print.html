@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Print</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Print using For/While/Do-While Loop</h1>
+        <script>
+            //print using for loop.........................
+            var a = 1;
+            var b = 10;
+            function printF(a, b) {
+                for (a; a <= b; a++) {
+                    document.write("Print: " + a + "<br/>");
+                }
+            }
+            printF(a, b);
+            document.write("<hr/>");
+
+            //print using while loop.........................
+            var i = 10;
+            var j = 1;
+            function printW(i, j) {
+                while (i >= j) {
+                    document.write("Print: " + i + "<br/>");
+                    i--;
+                }
+            }
+            printW(i, j);
+            document.write("<hr/>");
+
+            //print using do-while loop.........................
+            var m = 1;
+            var n = 10;
+            function printD(m, n) {
+                do {
+                    document.write("Print: " + m + "<br/>");
+                    m++;
+                } while (m <= n);
+            }
+            printD(m, n);
+        </script>
+    </body>
+</html>
