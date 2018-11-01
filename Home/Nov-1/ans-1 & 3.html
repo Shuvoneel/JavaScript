@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Answer-1 & 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Print 1 to 30 except 7, 18, 29</h1>
+        <script>
+            //solution one..................................................................................
+            var a = 1;
+            var b = 30;
+            function printN(a, b) {
+                for (a; a <= 30; a++) {
+                    if (a != 7 && a != 18 && a != 29) {
+                        document.write(a + "<br/>");
+                    }
+                }
+            }
+            printN(a, b);
+            document.write("<hr/>");
+
+            //solution two..................................................................................
+            var m = 1;
+            var n = 30;
+            function printT(m, n) {
+                for (m; m <= n; m++) {
+                    if (m == 7 || m == 18 || m == 29) {
+                        continue;
+                    } else {
+                        document.write(m + "<br/>");
+                    }
+                }
+            }
+            printT(m, n);
+        </script>
+    </body>
+</html>
