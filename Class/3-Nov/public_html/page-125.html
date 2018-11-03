@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Using Date Object</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <script>
+            var shuvo = new Date();
+            var dateNow = shuvo.getDate()
+            var monthNow = shuvo.getMonth();
+
+            if (dateNow == 29 && monthNow == 10) {
+                alert("Hey ! Happy Birthday");
+            } else {
+                document.write(shuvo);
+            }
+
+            document.write("<hr/>");
+            document.write("getDay" + " = " + shuvo.getDay());
+
+            document.write("<hr/>");
+            document.write("getDate" + " = " + shuvo.getDate());
+
+            document.write("<hr/>");
+            document.write("getFullYear" + " = " + shuvo.getFullYear());
+
+            document.write("<hr/>");
+            document.write("getHours" + " = " + shuvo.getHours());
+
+            document.write("<hr/>");
+            document.write("getSeconds" + " = " + shuvo.getSeconds());
+
+            document.write("<hr/>");
+            document.write("getMinutes" + " = " + shuvo.getMinutes());
+
+            document.write("<hr/>");
+            document.write("getMiliseconds" + " = " + shuvo.getMilliseconds());
+
+            document.write("<hr/>");
+            document.write("getMonth" + " = " + shuvo.getMonth());
+
+            document.write("<hr/>");
+            document.write("getTime" + " = " + shuvo.getTimezoneOffset());
+
+            document.write("<hr/>");
+            var x = new Date;
+            x.setDate(5);
+            document.write("setDate" + " = " + x);
+
+            document.write("<hr/>");
+            var x = new Date;
+            x.setHours(8);
+            document.write("setHours" + " = " + x);
+
+            document.write("<hr/>");
+            var x = new Date;
+            x.setFullYear(2019);
+            document.write("setFullYear" + " = " + x);
+
+            document.write("<hr/>");
+            var x = new Date;
+            x.setMinutes(18);
+            document.write("setMinutes" + " = " + x);
+
+        </script>
+
+    </body>
+</html>
