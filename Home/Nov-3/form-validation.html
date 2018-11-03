@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Validation-Home Practice-Nov-3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            label{
+                padding-left: 20px;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Form Validation</h1>
+        <form name="firstTime">
+            First name: <input type="text" name="fname"><label id="errOne"></label><br/>
+            Last name: <input type="text" name="lname"><label id="errTwo"></label><br/>
+            Password: <input type="number" name="password"><label id="errThree"></label><br/>
+            Gender: <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<label id="errFour"></label><br/>
+            Education: <input type="checkbox" name="ssc" value="SSC">SSC
+            <input type="checkbox" name="hsc" value=" HSC">HSC<label id="errFive"></label><br/>
+            <textarea name="msg" placeholder="Enter your text"></textarea><label id="errSix"></label><br/>
+            <input type="reset" value="reset">
+        </form>
+        <button type="submit" onClick="formValidation()">Submit</button>
+        <button type="submit" onClick="closeWindow()">Close Window</button>
+
+        <script>
+            var win;
+            function closeWindow() {
+                win.close();
+            }
+            //Form Validation Start....................................................................
+            function formValidation() {
+                //First name validation...................................................................................
+                var fname = document.forms["firstTime"]["fname"].value;
+                if (fname == "") {
+                    document.getElementById('errOne').innerHTML = "Name field must be required";
+                    return false;
+                } else if (fname.length < 3) {
+                    document.getElementById('errOne').innerHTML = "Enter at least 3 chatacters";
+                    return false;
+                } else {
+                    document.getElementById('errOne').innerHTML = "";
+                }
+                //Last name validation.........................................................................................
+                var lname = document.forms["firstTime"]["lname"].value;
+                if (lname == "") {
+                    document.getElementById('errTwo').innerHTML = "Name field must be required";
+                    return false;
+                } else if (lname.length < 3) {
+                    document.getElementById('errTwo').innerHTML = "Enter at least 3 chatacters";
+                    return false;
+                } else {
+                    document.getElementById('errTwo').innerHTML = "";
+                }
+                //Password validation.......................................................................................
+                var password = document.forms["firstTime"]["password"].value;
+                if (password.length < 8) {
+                    document.getElementById('errThree').innerHTML = "Enter at least 8 characters";
+                    return false;
+                } else {
+                    document.getElementById('errThree').innerHTML = "";
+                }
+                //Gender validation....................................................................................................
+                var gender = document.forms["firstTime"]["gender"].value;
+                if (gender == "") {
+                    document.getElementById('errFour').innerHTML = "Tell me your gender";
+                    return false;
+                } else {
+                    document.getElementById('errFour').innerHTML = "";
+                }
+                //Education validation....................................................................................................
+                //variable declared...........................................................................................
+                var education = "";
+                if (document.forms["firstTime"].ssc.checked) {
+                    education += document.forms["firstTime"]["ssc"].value;
+                }
+                if (document.forms["firstTime"].hsc.checked) {
+                    education += document.forms["firstTime"]["hsc"].value;
+                }
+                //validation for education start....................................................................................
+                if (!document.forms["firstTime"].ssc.checked && !document.forms["firstTime"].hsc.checked) {
+                    document.getElementById('errFive').innerHTML = "Tell me your educational qualification";
+                    return false;
+                } else {
+                    document.getElementById('errFive').innerHTML = "";
+                }
+                //Textarea validation...................................................................................
+                var msg = document.forms["firstTime"]["msg"].value;
+                if (msg.length < 10) {
+                    document.getElementById('errSix').innerHTML = "Enter at least 10 characters";
+                    return false;
+                } else {
+                    document.getElementById('errSix').innerHTML = "";
+                    win = window.open("", "", "width=350");
+                    win.document.write("<h1><center>Form Output</center></h1>");
+                    win.document.write("Name: " + fname + " " + lname + "<br/>");
+                    win.document.write("Password: " + password + "<br/>");
+                    win.document.write("Gender: " + gender + "<br/>");
+                    win.document.write("Education: " + education + "<br/>");
+                    win.document.write("Comments: " + msg + "<br/>");
+                }
+            }
+        </script>
+    </body>
+</html>
