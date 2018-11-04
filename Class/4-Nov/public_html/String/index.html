@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Length</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var a = "ABCDEFGHIJKLMNOPQRSTUVWXYZ Mehedi Hasan SHUVO ";
+            var b = a.length;
+            document.write("Length of a string = " + b);
+            document.write("<hr/>");
+
+            var c = a.indexOf("QRST");
+            document.write("Position of the first occurrence = " + c);
+            document.write("<hr/>");
+
+            var d = a.lastIndexOf("S");
+            document.write("Position of the last occurrence = " + d);
+            document.write("<hr/>");
+
+            var e = a.indexOf("hasan");
+            document.write("If the text is not found, return = " + e);
+            document.write("<hr/>");
+
+            var f = a.lastIndexOf("hasan");
+            document.write("If the text is not found, return = " + f);
+            document.write("<hr/>");
+
+            var g = a.indexOf("S", 19);
+            document.write("Second parameter as the starting position for the search = " + g);
+            document.write("<hr/>");
+
+            var h = a.search("SHUVO");
+            document.write("Searching for a String in a String = " + h);
+            document.write("<hr/>");
+
+            var i = a.slice(18, 29);
+            document.write("Extracting String(pos)-slice() Method = " + i);
+            document.write("<hr/>");
+
+            var j = a.slice(-19, -1);
+            document.write("Extracting String(neg)-slice() Method = " + j);
+            document.write("<hr/>");
+
+            var k = a.substring(27, 46);
+            document.write("substring() Method = " + k);
+            document.write("<hr/>");
+
+            var l = a.substr(27, 18);
+            document.write("substr() Method = " + l);
+            document.write("<hr/>");
+
+            var m = l.replace("SHUVO", "NEEL");
+            document.write("Replacing String Content = " + m);
+            document.write("<hr/>");
+
+            var n = m.replace(/mehedi hasan /i, "SHUVO");
+            document.write("Case-sensitivity of Replacing = " + n);
+            document.write("<hr/>");
+
+            var o = n.replace(/E/g, "I");
+            document.write("Replace All - Global Match = " + o);
+            document.write("<hr/>");
+
+            var p = m.toUpperCase();
+            document.write("Uppercase = " + p);
+            document.write("<hr/>");
+
+            var q = n.toLowerCase();
+            document.write("Uppercase = " + q);
+            document.write("<hr/>");
+
+            var r = "Mehedi Hasan ".concat("", n);
+            document.write("Concatanation = " + r);
+            document.write("<hr/>");
+
+            var s = "       Mehedi Hasan Shuvoneel        ";
+            var t = s.trim();
+            document.write("Trim = " + t);
+            document.write("<hr/>");
+
+            var u = t.charAt(18);
+            document.write("charAt() Method = " + u);
+            document.write("<hr/>");
+        </script>
+    </body>
+</html>
