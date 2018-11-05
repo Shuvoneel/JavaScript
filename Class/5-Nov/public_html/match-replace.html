@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>String Match & Replace</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var a = "only microsoft microsoft & microsoft is real"
+            var b = a.replace("microsoft", "W3Schools");
+            document.write(b);
+            document.write("<hr/>");
+            
+            var c=a.replace(/Microsoft/i,"W3Schools");
+            document.write(c);
+            document.write("<hr/>");
+            
+            var d=a.replace(/Microsoft/ig,"W3Schools");
+            document.write(d);
+        </script>
+    </body>
+</html>

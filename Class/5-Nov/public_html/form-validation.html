@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Form-validation - Nov-05</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            label{
+                padding-left: 20px;
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="myForm">
+            First Name: <input type="text" name="fname"><label id="errOne"></label><br/>
+            Last Name: <input type="text" name="lname"><label id="errTwo"></label><br/>
+            Gender: <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<label id="errThree"></label><br/>
+            Education: <input type="checkbox" name="ssc" value="SSC ">SSC
+            <input type="checkbox" name="hsc" value="HSC">HSC<label id="errSeven"></label><br/>
+            Round: <select name="round">
+                <option selected>Select a Round</option>
+                <option>Round 37</option>
+                <option>Round 38</option>
+                <option>Round 39</option>
+            </select><label id="errFour"></label><br/>
+            Password: <input type="number" name="password"><label id="errFive"></label><br/>
+            <textarea name="msg"></textarea><label id="errSix"></label><br/>
+            <input type="reset" value="Reset">
+        </form>
+
+        <button type="submit" onclick="formValidation()">Submit</button>
+        <button type="submit" onclick="closeWindow()">Close Window</button>
+
+        <script>
+            var win;
+            function closeWindow() {
+                win.close();
+            }
+            function formValidation() {
+                //First Name validation...............................
+                var fname = document.forms.myForm.fname.value;
+
+                if (fname == "") {
+                    document.getElementById('errOne').innerHTML = "Enter your first name";
+                    return false;
+                } else if (fname.length < 4) {
+                    document.getElementById('errOne').innerHTML = "Enter at least 4 characters";
+                    return false;
+                } else {
+                    document.getElementById('errOne').innerHTML = "";
+                }
+
+                //Last Name validation.......................................
+                var lname = document.forms.myForm.lname.value;
+
+                if (lname == "") {
+                    document.getElementById('errTwo').innerHTML = "Enter your Last name";
+                    return false;
+                } else if (lname.length < 4) {
+                    document.getElementById('errTwo').innerHTML = "Enter at least 4 characters";
+                    return false;
+                } else {
+                    document.getElementById('errTwo').innerHTML = "";
+                }
+                //Gender validation........................................
+                var gender = document.forms.myForm.gender.value;
+
+                if (gender == "") {
+                    document.getElementById('errThree').innerHTML = "Enter your gender";
+                    return false;
+                } else {
+                    document.getElementById('errThree').innerHTML = "";
+                }
+
+                //Round validation.........................
+                var round = document.forms.myForm.round.value;
+                if (round == "Select a Round") {
+                    document.getElementById('errFour').innerHTML = "Enter your round";
+                    return false;
+                } else {
+                    document.getElementById('errFour').innerHTML = "";
+                }
+
+                //password validation..........................
+                var password = document.forms.myForm.password.value;
+
+                if (password == "") {
+                    document.getElementById('errFive').innerHTML = "Enter your password";
+                    return false;
+                } else if (password.length < 8) {
+                    document.getElementById('errFive').innerHTML = "Enter at least 8 characters";
+                    return false;
+                } else {
+                    document.getElementById('errFive').innerHTML = "";
+                }
+                //Comments validation........................
+                var msg = document.forms.myForm.msg.value;
+
+                if (msg == "") {
+                    document.getElementById('errSix').innerHTML = "Enter your message";
+                    return false;
+                } else if (msg.length < 10) {
+                    document.getElementById('errSix').innerHTML = "Enter at least 10 characters";
+                    return false;
+                } else {
+                    document.getElementById('errSix').innerHTML = "";
+                }
+
+                //Education validation.....................................
+                var education = "";
+                if (document.forms.myForm.ssc.checked) {
+                    education += document.forms.myForm.ssc.value;
+                }
+                if (document.forms.myForm.hsc.checked) {
+                    education += document.forms.myForm.hsc.value;
+                }
+
+                if (education == "") {
+                    document.getElementById('errSeven').innerHTML = "Enter your education";
+                    return false;
+                } else {
+                    document.getElementById('errSeven').innerHTML = "";
+                    win = window.open("", "", "width=400,height=300,left=400");
+                    win.document.write("<h1><center>Form Output</center></h1><br/>");
+                    win.document.write("<b>Name: </b>" + fname + " " + lname + "<br/>");
+                    win.document.write("<b>Gender: </b>" + gender + "<br/>");
+                    win.document.write("<b>Education: </b>" + education + "<br/>");
+                    win.document.write("<b>Round: </b>" + round + "<br/>");
+                    win.document.write("<b>Password: </b>" + password + "<br/>");
+                    win.document.write("<b>Comments: </b>" + msg + "<br/>");
+                }
+
+            }
+        </script>
+    </body>
+</html>

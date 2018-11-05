@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Split</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var a = "Only Microsoft is Real"
+            var b = a.split("");
+            document.write("Without space = " + b);
+            document.write("<hr/>");
+
+            var c = a.split(" ");
+            document.write("With space = " + c);
+            document.write("<hr/>");
+
+            var d = a.split(" ", 3);
+            document.write("With space & parameter = " + d);
+            document.write("<hr/>");
+
+            var e = a.split("o");
+            document.write("Split a character = " + e);
+            document.write("<hr/>");
+        </script>
+    </body>
+</html>
