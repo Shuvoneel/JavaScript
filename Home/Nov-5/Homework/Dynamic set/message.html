@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Page-139</title>
+        <script>
+            function dynamic() {
+                var dyn = window.open("", "show")
+                var message = parent.frames[0].document.forms[0].pass.value;
+                dyn.document.write('<body bgColor=#dddddd>');
+                dyn.document.write('<center>');
+                dyn.document.write('<p><p>');
+                dyn.document.write('<h1>');
+                dyn.document.write(message);
+                dyn.document.write('<h1>');
+                dyn.document.write('</center>');
+                dyn.document.write('</body>');
+                dyn.document.close();
+            }
+        </script>
+    </head>
+    <body>
+        <p><p>
+        <h3>Enter your message in the text window;</h3>
+        <form>
+            <input type="text" name="pass"><p>
+                <input type="button" value="Change the page" onclick="dynamic()">
+        </form>
+    </body>
+</html>

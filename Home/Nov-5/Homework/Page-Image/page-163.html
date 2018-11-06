@@ -1,0 +1,21 @@
+
+<html>
+    <head>
+        <title>Using load with pages and images</title>
+        <script>
+            function whew() {
+                alert("Finally got tubby loaded");
+            }
+            function fillThemUp() {
+                var alpha = "All done";
+                document.fuzzy.wuzzy.value = alpha;
+            }
+        </script>
+    </head>
+    <body bgColor="lightseagreen" onload="fillThemUp()">
+        <img src="jumbo.jpg" alt="jumbo" onLoad="whew()">
+        <form name="fuzzy">
+            <input type="text" name="wuzzy">
+        </form>
+    </body>
+</html>

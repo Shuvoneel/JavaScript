@@ -1,0 +1,17 @@
+
+<html>
+    <head>
+        <title>On focus</title>
+        <script>
+            function autoWrite() {
+                document.forms[0].elements[0].value = "Greetings earthling!"
+            }
+        </script>
+    </head>
+    <h3>Click on the text window</h3>
+    <body bgColor="rosybrown">
+        <form>
+            <input type="text" onFocus="autoWrite()">
+        </form>
+    </body>
+</html>

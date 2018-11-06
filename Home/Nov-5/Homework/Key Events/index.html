@@ -1,0 +1,22 @@
+
+<html>
+    <head>
+        <title>Keys Up & Down </title>
+        <script>
+            function fillIn() {
+                document.forms[0].elements[1].value = "JavaScript is here."
+            }
+        </script>
+    </head>
+    <body bgColor="cornflowerblue" onKeyPress="alert('This was set up in the body element.')">
+    <center>
+        <h2>Click on the link text, button, or text window.<br/>Then press any key.</h2>
+        <a href="#" onKeyUp="alert('The <a  href> did it!')">link text</a><p>
+        <form>
+            <input type="button" value="Surprise me!" onKeyPress="alert('You have to press the surprise me button first!')"><p>
+                <input type="text" size="20" onKeyDown="fillIn">
+        </form>
+    </center>
+</center>
+</body>
+</html>

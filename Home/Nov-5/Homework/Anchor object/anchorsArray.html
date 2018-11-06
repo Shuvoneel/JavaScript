@@ -1,0 +1,25 @@
+
+<html>
+    <head>
+        <title>Anchors & Hashes</title>
+        <script>
+            function countAnchors() {
+                alert("This script has " + document.anchors.length + " anchors.");
+            }
+            function gpAnchors(anchName) {
+                location.hash = anchName;
+            }
+        </script>
+    </head>
+    <body onLoad="countAnchors()">
+        <p>
+        <h2>Top level <a name="top"></a></h2>
+        <a href="#" onMouseDown="gpAnchors('one')">One</a> | <a href="#" onMouseOut="gpAnchors('two')">Two</a> | <a href="#" onMouseMove="gpAnchors('three')">Three</a> | <a href="#" onMouseOver="gpAnchors(four)">Four</a>
+        <p><p><hr/><hr/><p><h3>Level  One<a name="one"></a></h3>
+        <p><p><hr/><hr/><p><h3>Level  Two<a name="two"></a></h3>
+        <p><p><hr/><hr/><p><h3>Level  Three<a name="three"></a></h3>
+        <p><hr/><hr/>
+        <p><a href="#" onMouseUp="gpAnchors('top')">Top</a>
+        <h3>Level Four<a name="four"></a></h3>
+    </body>
+</html>
