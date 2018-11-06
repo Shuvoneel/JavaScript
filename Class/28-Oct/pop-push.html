@@ -2,18 +2,28 @@
 
 <html>
     <head>
-        <title>Pop+Push+Shift</title>
+        <title>Pop/Push/Shift/Unshift</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <script>
-            var a = new Array("Banana", "Orange", "Apple", "Mango");
-			
-			var x = a.push("Guava");
-			document.write(x);
+            var zoo = new Array("zebras", "lions", "apes", "tigers");
+            zoo.pop();
+            document.write(zoo);
+            document.write("<hr/>");
+            
+            zoo.push("deers");
+            document.write(zoo);
+            document.write("<hr/>");
+            
+            zoo.shift();
+            document.write(zoo);
+            document.write("<hr/>");
 
-
+            zoo.unshift("elephants");
+            document.write(zoo);
+            document.write("<hr/>");
         </script>
     </body>
 </html>
