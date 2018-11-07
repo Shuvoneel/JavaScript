@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Email Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function validateForm() {
+                var s = document.forms.myForm.email.value;
+                var atpos = s.indexOf("@");
+                var dotpos = s.lastIndexOf(".");
+
+                if (atpos < 2 || dotpos < atpos + 1 || dotpos + 1 >= s.length) {
+                    alert("Email is not valid");
+                    return false;
+                } else {
+                    alert("This mail is valid");
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myForm" action="#" onsubmit="return validateForm()" method="post">
+            Email: <input type="text" name="email">
+            <input type="submit" value="Send">
+        </form>
+    </body>
+</html>

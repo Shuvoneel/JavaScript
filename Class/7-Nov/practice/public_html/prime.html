@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Find Prime Number (Unsolved) </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var s = parseInt(prompt("Enter number", ""));
+
+            function findPrime(n) {
+                var x = true;
+                for (var i = 2; i < n; i++) {                  
+                  if (n % i === 0) return false;
+                return n!==0 && n!==1;   
+                }
+            }
+            document.write(findPrime(s));
+        </script>
+    </body>
+</html>
