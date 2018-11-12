@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Form Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            label{
+                padding-left: 20px;
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="myForm">
+            Name: <input type="text" name="name"><label id="errOne"></label><br/>
+            Gender: <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<label id="errTwo"></label><br/>
+            Education: <input type="checkbox" name="ssc" value="SSC">SSC
+            <input type="checkbox" name="hsc" value="HSC">HSC<label id="errThree"></label><br/>
+            Round: <select name="round">
+                <option selected="">Select a Round</option>
+                <option>Round 37</option>
+                <option>Round 38</option>
+                <option>Round 39</option>
+            </select><label id="errFour"></label><br/>
+            <textarea name="msg"></textarea><label id="errFive"></label><br/>
+            Password: <input type="number" name="pass"><label id="errSix"></label><br/>
+
+
+            <input type="reset">
+        </form>
+        <button type="submit" onClick="validateForm()">Send</button>
+        <button type="submit" onClick="closeWin()">Close Window</button>
+
+        <script>
+            var win;
+            function closeWin() {
+                win.close();
+            }
+
+            function validateForm() {
+                //Name...........................................................
+                var name = document.forms.myForm.name.value;
+                if (name == "") {
+                    document.getElementById('errOne').innerHTML = "Enter your name";
+                    return false;
+                } else if (name.length < 10) {
+                    document.getElementById('errOne').innerHTML = "Enter at least 10 character";
+                    return false;
+                } else {
+                    document.getElementById('errOne').innerHTML = "";
+                }
+
+                //Gender.......................................................
+                var gender = document.forms.myForm.gender.value;
+                if (gender == "") {
+                    document.getElementById('errTwo').innerHTML = "Enter your gender";
+                    return false;
+                } else {
+                    document.getElementById('errTwo').innerHTML = "";
+                }
+
+                //Education.....................................................
+                var education = "";
+                if (document.forms.myForm.ssc.checked) {
+                    education += document.forms.myForm.ssc.value;
+                }
+                if (document.forms.myForm.hsc.checked) {
+                    education += document.forms.myForm.hsc.value;
+                }
+
+                if (!document.forms.myForm.ssc.checked && !document.forms.myForm.hsc.checked) {
+                    document.getElementById('errThree').innerHTML = "Enter your education";
+                    return false;
+                } else {
+                    document.getElementById('errThree').innerHTML = "";
+                }
+
+                //Round.......................................................
+                var round = document.forms.myForm.round.value;
+
+                if (round == "Select a Round") {
+                    document.getElementById('errFour').innerHTML = "Enter your round";
+                    return false;
+                } else {
+                    document.getElementById('errFour').innerHTML = "";
+                }
+
+                //Message.....................................................
+                var msg = document.forms.myForm.msg.value;
+                if (msg == "") {
+                    document.getElementById('errFive').innerHTML = "Enter your message";
+                    return false;
+                } else if (msg.length < 10) {
+                    document.getElementById('errFive').innerHTML = "Enter at least 10 characters";
+                    return false;
+                } else {
+                    document.getElementById('errFive').innerHTML = "";
+                }
+
+                //Password......................................................
+                var pass = document.forms.myForm.pass.value;
+                if (pass == "") {
+                    document.getElementById('errSix').innerHTML = "Enter your password";
+                    return false;
+                } else if (pass.length < 8) {
+                    document.getElementById('errSix').innerHTML = "Must be 8 characters";
+                    return false;
+                } else {
+                    document.getElementById('errSix').innerHTML = "";
+                    win = window.open("", "", "width=400,height=250,left=300");
+                    win.document.write("<h1>Form Output</h1>" + "<br/>");
+                    win.document.write(name + "<br/>");
+                    win.document.write(gender + "<br/>");
+                    win.document.write(education + "<br/>");
+                    win.document.write(round + "<br/>");
+                    win.document.write(msg + "<br/>");
+                    win.document.write(pass + "<br/>");
+                }
+            }
+        </script>
+
+    </body>
+</html>

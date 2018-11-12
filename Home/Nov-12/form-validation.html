@@ -2,7 +2,7 @@
 
 <html>
     <head>
-        <title>Email Validation</title>
+        <title>Form Validation</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -30,7 +30,7 @@
             Password: <input type="number" name="pass"><label id="errSeven"></label><br/>
             <input type="reset">
         </form>
-        <button type="submit" onclick="validateMail()">Submit</button>
+        <button type="submit" onclick="validateForm()">Submit</button>
         <button type="submit" onclick="closeWindow()">Close Window</button>
 
         <script>
@@ -38,7 +38,7 @@
             function closeWindow() {
                 win.close();
             }
-            function validateMail() {
+            function validateForm() {
                 //Name...........................................................................................................
                 var fname = document.forms.myForm.fname.value;
                 var lname = document.forms.myForm.lname.value;

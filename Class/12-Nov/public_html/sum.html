@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sum of starting to ending numbers</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var x = parseInt(prompt("Enter 1st number", ""));
+            var y = parseInt(prompt("Enter 2nd number", ""));
+            var sum = 0;
+
+            function printSum(x, y) {
+                if (x < y) {
+                    for (x; x <= y; x++) {
+                        sum += x;
+                    }
+                } else if (x > y) {
+                    for (x; x >= y; x--) {
+                        sum += x;
+                    }
+                } else {
+                    sum = x;
+                }
+                return sum;
+            }
+            alert("Sum of " + x + " to " + y + " is " + printSum(x, y));
+        </script>
+    </body>
+</html>
