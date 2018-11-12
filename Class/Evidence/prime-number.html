@@ -8,56 +8,44 @@
     </head>
     <body>
         <script>
-            //First, find a prime number.......................................
-
-            function findPrime(num) {
-                for (var i = 2; i < num; i++) {
+            function isPrime(num) {
+                for (var i = 2; i < num; i++)
                     if (num % i === 0)
                         return false;
-                    return num !== 1 && num !== 0;
-                }
+                return num !== 1 && num !== 0;
             }
-            alert(findPrime(29));
-
-
-            //Second, print prime numbers if needed...........................
+            alert(isPrime(12));
 
             function printPrime(sn, en) {
                 for (sn; sn < en; sn++) {
-                    if (findPrime(sn)) {
-                        document.write("Prime = " + sn + "<hr/>");
+                    if (isPrime(sn)) {
+                        document.write("Prime: " + sn + "<hr>");
                     }
                 }
             }
-            printPrime(1, 50);
-
-
-            //Third, make sum of the prime numbers if asked....................
-
+            printPrime(1, 100);
             function printSum(sn, en) {
                 var sum = 0;
                 for (sn; sn < en; sn++) {
-                    if (findPrime(sn)) {
+                    if (isPrime(sn)) {
                         sum += sn;
                     }
                 }
                 return sum;
             }
-            document.write("Sum = " + printSum(1, 100));
-            document.write("<hr/>");
+            document.write("Sum of Prime Number from 1 to 100: " + printSum(1, 100) + "<hr>");
 
-            //Last, count prime numbers........................................
             function printCount(sn, en) {
                 var count = 0;
                 for (sn; sn < en; sn++) {
-                    if (findPrime(sn)) {
+                    if (isPrime(sn)) {
                         count++;
                     }
                 }
                 return count;
             }
-            document.write("Count = " + printCount(1, 1000));
-            document.write("<hr/>");
+            document.write("Count of Prime Number from 1 to 100: " + printCount(1, 100));
+
         </script>
     </body>
 </html>
