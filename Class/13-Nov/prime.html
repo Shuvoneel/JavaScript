@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Prime Number</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var x = parseInt(prompt("Enter Number", ""));
+            function isPrime(num) {
+                for (var i = 2; i < num; i++)
+                    if (num % i === 0)
+                        return false;
+                return num !== 0 && num !== 1;
+            }
+            alert(isPrime(x));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Form Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form name="myForm">
+            Name: <input type="text" name="name"><label id="errOne"></label><br/>
+            Gender: <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<label id="errTwo"></label><br/>
+            Education: <input type="checkbox" name="ssc" value="SSC">SSC
+            <input type="checkbox" name="hsc" value="hsc">HSC<label id="errThree"></label><br/>
+            Round: <select name="round">
+                <option selected="">Select a Round</option>
+                <option>Round 37</option>
+                <option>Round 38</option>
+                <option>Round 39</option>
+            </select><label id="errFour"></label><br/>
+            <textarea name="msg"></textarea><label id="errFive"></label><br/>
+
+            <input type="reset">
+        </form>
+        <button type="submit" onclick="validateForm()">Send</button>
+        <button type="submit" onclick="closeWin()">Close Window</button>
+
+        <script>
+            var win;
+            function closeWin() {
+                win.close();
+            }
+
+            function validateForm() {
+                var name = document.forms.myForm.name.value;
+                if (name == "") {
+                    document.getElementById('errOne').innerHTML = "Enter your name";
+                    return false;
+                } else if (name.length < 10) {
+                    document.getElementById('errOne').innerHTML = "Enter at least 10 characters";
+                    return false;
+                } else {
+                    document.getElementById('errOne').innerHTML = "";
+                }
+
+                var gender = document.forms.myForm.gender.value;
+                if (gender == "") {
+                    document.getElementById('errTwo').innerHTML = "Enter your gender";
+                    return false;
+                } else {
+                    document.getElementById('errTwo').innerHTML = "";
+                }
+
+                var education = "";
+                if (document.forms.myForm.ssc.checked) {
+                    education += document.forms.myForm.ssc.value;
+                }
+                if (document.forms.myForm.hsc.checked) {
+                    education += document.forms.myForm.hsc.value;
+                }
+
+                if (!document.forms.myForm.ssc.checked && !document.forms.myForm.hsc.checked) {
+                    document.getElementById('errThree').innerHTML = "Enter your education";
+                    return false;
+                } else {
+                    document.getElementById('errThree').innerHTML = "";
+                }
+
+                var round = document.forms.myForm.round.value;
+
+                if (round == "Select a Round") {
+                    document.getElementById('errFour').innerHTML = "Enter your round";
+                    return false;
+                } else {
+                    document.getElementById('errFour').innerHTML = "";
+                }
+
+                var msg = document.forms.myForm.msg.value;
+                if (msg == "") {
+                    document.getElementById('errFive').innerHTML = "Enter your message";
+                    return false;
+                } else if (msg.length < 10) {
+                    document.getElementById('errFive').innerHTML = "Enter at least 10 characters";
+                    return false;
+                } else {
+                    document.getElementById('errFive').innerHTML = "";
+                    win = window.open("", "", "width=300,height=300,left=250");
+                    win.document.write("<h1>Form Output</h1>");
+                    win.document.write(name + "<br/>");
+                    win.document.write(gender + "<br/>");
+                    win.document.write(education + "<br/>");
+                    win.document.write(round + "<br/>");
+                    win.document.write(msg + "<br/>");
+                }
+            }
+        </script>
+    </body>
+</html>
