@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Form Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            label{
+                padding-left: 20px;
+                color: red;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="myForm">
+            Name: <input type="text" name="name"><label id="errOne"></label><br/>
+            ID: <input type="number" name="reg"><label id="errSeven"></label><br/>
+            Gender: <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<label id="errTwo"></label><br/>
+            Education: <input type="checkbox" name="ssc" value="SSC ">SSC
+            <input type="checkbox" name="hsc" value="HSC">HSC<label id="errThree"></label><br/>
+            Round: <select name="round">
+                <option selected="">Select a Round</option>
+                <option>Round 37</option>
+                <option>Round 38</option>
+                <option>Round 39</option>
+            </select><label id="errFour"></label><br/>
+            <textarea name="msg"></textarea><label id="errFive"></label><br/>
+            Password: <input type="number" name="pass"><label id="errSix"></label><br/>
+            Email: <input type="text" name="mail"><label id="errEight"></label><br/>
+
+
+            <input type="reset">
+        </form>
+        <button type="submit" onClick="validateForm()">Display</button>
+        <button type="submit" onClick="closeWin()">Close Window</button>
+
+        <script>
+            var win;
+            function closeWin() {
+                win.close();
+            }
+
+            function validateForm() {
+                //Name...........................................................
+                var name = document.forms.myForm.name.value;
+                if (name == "") {
+                    document.getElementById('errOne').innerHTML = "What is your Name";
+                    return false;
+                } else if (name.length < 10) {
+                    document.getElementById('errOne').innerHTML = "Enter at least 10 characters";
+                    return false;
+                } else {
+                    document.getElementById('errOne').innerHTML = "";
+                }
+
+                //ID............................................................
+                var reg = document.forms.myForm.reg.value;
+                if (reg == "") {
+                    document.getElementById('errSeven').innerHTML = "What is your ID";
+                    return false;
+                } else if (reg.length < 7) {
+                    document.getElementById('errSeven').innerHTML = "ID must have 7 digits";
+                    return false;
+                } else {
+                    document.getElementById('errSeven').innerHTML = "";
+                }
+
+                //Gender.......................................................
+                var gender = document.forms.myForm.gender.value;
+                if (gender == "") {
+                    document.getElementById('errTwo').innerHTML = "What is your gender";
+                    return false;
+                } else {
+                    document.getElementById('errTwo').innerHTML = "";
+                }
+
+                //Education.....................................................
+                var education = "";
+                if (document.forms.myForm.ssc.checked) {
+                    education += document.forms.myForm.ssc.value;
+                }
+                if (document.forms.myForm.hsc.checked) {
+                    education += document.forms.myForm.hsc.value;
+                }
+
+                if (!document.forms.myForm.ssc.checked && !document.forms.myForm.hsc.checked) {
+                    document.getElementById('errThree').innerHTML = "What is your Educational Qualification";
+                    return false;
+                } else {
+                    document.getElementById('errThree').innerHTML = "";
+                }
+
+                //Round.......................................................
+                var round = document.forms.myForm.round.value;
+
+                if (round == "Select a Round") {
+                    document.getElementById('errFour').innerHTML = "What is your Round";
+                    return false;
+                } else {
+                    document.getElementById('errFour').innerHTML = "";
+                }
+
+                //Message.....................................................
+                var msg = document.forms.myForm.msg.value;
+                if (msg == "") {
+                    document.getElementById('errFive').innerHTML = "Enter your Comments";
+                    return false;
+                } else if (msg.length < 10) {
+                    document.getElementById('errFive').innerHTML = "Enter at least 10 characters";
+                    return false;
+                } else {
+                    document.getElementById('errFive').innerHTML = "";
+                }
+
+                //Password......................................................
+                var pass = document.forms.myForm.pass.value;
+                if (pass == "") {
+                    document.getElementById('errSix').innerHTML = "What is your Password";
+                    return false;
+                } else if (pass.length < 8) {
+                    document.getElementById('errSix').innerHTML = "Password must contain 8 characters";
+                    return false;
+                } else {
+                    document.getElementById('errSix').innerHTML = "";
+                }
+
+                //Email.........................................................
+                var mail = document.forms.myForm.mail.value;
+                var atpos = mail.indexOf("@");
+                var dotpos = mail.lastIndexOf(".");
+                if (mail == "") {
+                    document.getElementById('errEight').innerHTML = "What is your email";
+                    return false;
+                } else if (atpos < 2 || atpos + 2 > dotpos || dotpos + 2 > mail.length) {
+                    document.getElementById('errEight').innerHTML = "Enter a valid email";
+                    return false;
+                } else {
+                    document.getElementById('errEight').innerHTML = "";
+                    win = window.open("", "", "width=400,height=250,left=300");
+                    win.document.write("<h1>Form Output</h1>" + "<br/>");
+                    win.document.write("<b>Name: </b>" + name + "<br/>");
+                    win.document.write("<b>ID: </b>" + reg + "<br/>");
+                    win.document.write("<b>Gender: </b>" + gender + "<br/>");
+                    win.document.write("<b>Education: </b>" + education + "<br/>");
+                    win.document.write("<b>Round: </b>" + round + "<br/>");
+                    win.document.write("<b>Message: </b>" + msg + "<br/>");
+                    win.document.write("<b>Email: </b>" + mail + "<br/>");
+                }
+            }
+        </script>
+
+    </body>
+</html>
