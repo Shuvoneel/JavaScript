@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Quiz 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Print Odd number from 1 - 20 and if get any number divisible by 13, add 500 bonus</h1>
+        <script>
+            var sn = 1;
+            var en = 20;
+            function printOdd(sn, en) {
+                for (sn; sn <= en; sn++) {
+                    if (sn % 2 == 1) {
+                        document.write("odd number: " + sn + "<br/>");
+                    } else {
+                        document.write("even number: " + sn + "<br/>");
+                    }
+                }
+            }
+            printOdd(sn, en);
+            document.write("<hr/>");
+            var j = 1;
+            var k = 20;
+            function printNum(j, k) {
+                for (j; j <= k; j++) {
+                    if (j % 13 == 0) {
+                        document.write("number divided by 13: " + j + " = " + (j + 500) + "<br/>");
+                    } else {
+                        document.write("other number: " + j + "<br/>");
+                    }
+                }
+            }
+            printNum(j, k);
+        </script>
+    </body>
+</html>

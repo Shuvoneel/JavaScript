@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Quiz 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Find Prime Number between 1 to 30</h1>
+        <script>
+            var x = parseInt(prompt("Enter number", ""));
+            function isPrime(num) {
+                for (var i = 2; i < num; i++)
+                    if (num % i === 0)
+                        return false;
+                return num !== 1 && num !== 0;
+            }
+            alert(isPrime(x));
+
+            function printPrime(sn, en) {
+                for (sn; sn < en; sn++) {
+                    if (isPrime(sn)) {
+                        document.write("Prime: " + sn + "<hr>");
+                    }
+                }
+            }
+            printPrime(1, 30);
+
+        </script>
+    </body>
+</html>
