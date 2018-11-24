@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Confusion</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+	<h1>Split - Math.round - Math.floor</h1>
+        <script>
+            var x = "Quality Point Technologies";
+            var y = x.split(" ");
+			document.write("Split in Spaces = "+y);
+			document.write("<hr/>");
+			
+			var m = -20.6;
+			var n = Math.round(m);
+			document.write("Round Negative Number = "+n);
+			document.write("<hr/>");
+			
+			var p = 20.4;
+			var q = Math.round(p);
+			document.write("Round Positive Number = "+q);
+			document.write("<hr/>");
+			
+			var a = -20.4;
+			var b = Math.floor(a);
+			document.write("Floor Negative Number = "+b);
+			document.write("<hr/>");
+			
+			var k = 20.6;
+			var l = Math.floor(k);
+			document.write("Floor Positive Number = "+l);
+			document.write("<hr/>");
+			
+			var c = 100;
+			document.write("Increment After = "+ c++);
+			document.write("<hr/>");
+			
+			var d = 100;
+			document.write("Increment Before = "+ ++d);
+			document.write("<hr/>");
+			
+			var e = "111.18 central Road,1205";
+			document.write("parseInt = "+ parseInt(e));
+			document.write("<hr/>");
+			
+			var r = "111.18 central Road,1205";
+			document.write("parseFloat = "+ parseFloat(e));
+			document.write("<hr/>");
+        </script>
+    </body>
+</html>
