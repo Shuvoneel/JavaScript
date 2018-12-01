@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Prime Number with Writings</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var num = parseInt(prompt("Enter the number",""));
+            function isPrime(num) {
+                for (var i = 2; i < num; i++)
+                    if (num % i === 0)
+                        return "Not Prime";
+                return num !== 1 && num !== 0;
+            }
+            alert(isPrime(num));
+
+            function printPrime(sn, en) {
+                for (sn; sn < en; sn++) {
+                    if (isPrime(sn)) {
+                        document.write(sn + " is Prime: " + "<hr>");
+                    }else{
+                    document.write(sn + " is Not Prime: " + "<hr>");
+                    }
+                }
+            }
+            printPrime(1, 100);
+        </script>
+    </body>
+</html>
