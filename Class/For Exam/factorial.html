@@ -10,11 +10,11 @@
         <script>
             var x = parseInt(prompt("Enter your number", ""));
 
-            function findFactorial(num) {
-                if (num == 0 || num == 1) {
+            function findFactorial(x) {
+                if (x == 0 || x == 1) {
                     return 1;
                 } else {
-                    return (findFactorial(num - 1)) * num;
+                    return (findFactorial(x - 1)) * x;
                 }
             }
             alert("Factorial of " + x + " is " + findFactorial(x));

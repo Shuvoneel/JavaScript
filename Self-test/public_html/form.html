@@ -5,35 +5,142 @@
         <title>Form Validation</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            label{
+                padding-left: 20px;
+                color: red;
+            }
+        </style>
     </head>
     <body>
         <form name="myForm">
-            Fullname: <input type="text" name="name"><label id="errOne"></label><br/>
+            Fullname: <input type="text" name="fname"><label id="one"></label><br/>
+            ID: <input type="number" name="roll"><label id="two"></label><br/>
+            Gender: <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<label id="three"></label><br/>
+            Education: <input type="checkbox" name="ssc" value="SSC ">SSC
+            <input type="checkbox" name="hsc" value="HSC">HSC<label id="four"></label><br/>
+            Round: <select name="round">
+                <option selected="">Select a Round</option>
+                <option>Round 37</option>
+                <option>Round 38</option>
+                <option>Round 39</option>
+            </select><label id="five"></label><br/>
+            <textarea name="msg"></textarea><label id="six"></label><br/>
+            Password: <input type="password" name="pass"><label id="seven"></label><br/>
+            Retype Password: <input type="password" name="rpass"><label id="eight"></label><br/>
+
             <input type="reset">
         </form>
-        <button type="submit" onClick="validateForm()">Display</button>
+        <button type="submit" onClick="validateForm()">Send</button>
         <button type="submit" onClick="closeWin()">Close</button>
-    </body>
-    <script>
-        var win;
-        function closeWin() {
-            win.close();
-        }
 
-        function validateForm() {
-            var name = document.forms.myForm.name.value;
-            if (name == "") {
-                document.getElementById("errOne").innerHTML = "What is your Name";
-                return false;
-            } else if (name.length < 10) {
-                document.getElementById("errOne").innerHTML = "Enter at least 10 characters";
-                return false;
-            } else {
-                document.getElementById("errOne").innerHTML = "";
-                win = window.open("", "", "width=400,height=250,left=300");
-                win.document.write("<h1>Form Output</h1>" + "<br/>");
-                win.document.write("<b>Name: </b>" + name + "<br/>");
+        <script>
+            var win;
+            function closeWin() {
+                win.close();
             }
-        }
-    </script>
+
+            function validateForm() {
+                var fname = document.forms.myForm.fname.value;
+                if (fname == "") {
+                    document.getElementById("one").innerHTML = "What's your name?";
+                    return false;
+                } else if (fname.length < 10) {
+                    document.getElementById("one").innerHTML = "Enter 10 characters";
+                    return false;
+                } else {
+                    document.getElementById("one").innerHTML = "";
+                }
+
+                var roll = document.forms.myForm.roll.value;
+                if (roll == "") {
+                    document.getElementById("two").innerHTML = "What's your ID?";
+                    return false;
+                } else if (roll.length < 5) {
+                    document.getElementById("two").innerHTML = "Enter 5 characters";
+                    return false;
+                } else {
+                    document.getElementById("two").innerHTML = "";
+                }
+
+                var gender = document.forms.myForm.gender.value;
+
+                if (gender == "") {
+                    document.getElementById("three").innerHTML = "What's your gender?";
+                    return false;
+                } else {
+                    document.getElementById("three").innerHTML = "";
+                }
+
+                var education = "";
+                if (document.forms.myForm.ssc.checked) {
+                    education += document.forms.myForm.ssc.value;
+                }
+                if (document.forms.myForm.hsc.checked) {
+                    education += document.forms.myForm.hsc.value;
+                }
+
+                if (!document.forms.myForm.ssc.checked && !document.forms.myForm.hsc.checked) {
+                    document.getElementById("four").innerHTML = "What's your education?";
+                    return false;
+                } else {
+                    document.getElementById("four").innerHTML = "";
+                }
+
+                var round = document.forms.myForm.round.value;
+
+                if (round == "Select a Round") {
+                    document.getElementById("five").innerHTML = "What's your round?";
+                    return false;
+                } else {
+                    document.getElementById("five").innerHTML = "";
+                }
+
+                var msg = document.forms.myForm.msg.value;
+
+                if (msg == "") {
+                    document.getElementById("six").innerHTML = "Enter your message";
+                    return false;
+                } else if (msg.length < 10) {
+                    document.getElementById("six").innerHTML = "Enter 10 characters";
+                    return false;
+                } else {
+                    document.getElementById("six").innerHTML = "";
+                }
+
+                var pass = document.forms.myForm.pass.value;
+
+                if (pass == "") {
+                    document.getElementById("seven").innerHTML = "Enter your password";
+                    return false;
+                } else if (pass.length < 7) {
+                    document.getElementById("seven").innerHTML = "Enter 7 characters";
+                    return false;
+                } else {
+                    document.getElementById("seven").innerHTML = "";
+                }
+
+                var rpass = document.forms.myForm.rpass.value;
+
+                if (rpass == "") {
+                    document.getElementById("eight").innerHTML = "Retype Password";
+                    return false;
+                } else if (document.forms.myForm.rpass.value != document.forms.myForm.pass.value) {
+                    document.getElementById("eight").innerHTML = "didn't match";
+                    return false;
+                } else {
+                    document.getElementById("eight").innerHTML = "";
+                    win = window.open("", "", "width=300,height=250,left=300");
+                    win.document.write("<h1>Output</h1>" + "<br/>");
+                    win.document.write(fname + "<br/>");
+                    win.document.write(roll + "<br/>");
+                    win.document.write(gender + "<br/>");
+                    win.document.write(education + "<br/>");
+                    win.document.write(round + "<br/>");
+                    win.document.write(msg + "<br/>");
+                }
+            }
+        </script>
+    </body>
 </html>
