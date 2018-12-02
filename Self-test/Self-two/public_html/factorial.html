@@ -12,9 +12,9 @@ and open the template in the editor.
     </head>
     <body>
         <script>
-            var x = parseInt(prompt("Enter number", ""));
+            var x = parseInt(prompt("enter number", ""));
             function findFactorial(x) {
-                if (x == 0 || x == 1) {
+                if (x == 1 || x == 0) {
                     return 1;
                 } else {
                     return findFactorial(x - 1) * x;

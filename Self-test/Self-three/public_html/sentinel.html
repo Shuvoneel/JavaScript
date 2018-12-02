@@ -6,22 +6,21 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Factorial Number</title>
+        <title>Sentinel</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <script>
-            var x = parseInt(prompt("Enter number", ""));
-            function findFactorial(x) {
-                if (x == 0 || x == 1) {
-                    return 1;
-                } else {
-                    return findFactorial(x - 1) * x;
+            var x;
+            var sum = 0;
+                while (x != -1) {
+                    x = parseInt(prompt("Enter number", ""));
+                    if (x != -1) {
+                        sum += x;
+                    }
                 }
-            }
-            document.write("Factorial of " + x + " = " + findFactorial(x));
-            alert(findFactorial(x));
+            alert(sum);
         </script>
     </body>
 </html>

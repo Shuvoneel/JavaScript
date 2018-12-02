@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Form Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form name="myForm">
+            Fullname: <input type="text" name="fname"><label id="one"></label><br/>
+            ID: <input type="number" name="roll"><label id="two"></label><br/>
+            Gender: <input type="radio" name="gender" value="Male">Male 
+            <input type="radio" name="gender" value="Female">Female<label id="three"></label><br/>
+            Round: <select name="round">
+                <option selected="">Select a Round</option>
+                <option>38</option>
+                <option>39</option>
+            </select><label id="four"></label><br/>
+            Education: <input type="checkbox" name="ssc" value="SSC">SSC
+            <input type="checkbox" name="hsc" value="HSC">HSC<label id="five"></label><br/>
+            Password: <input type="password" name="pass"><label id="six"></label><br/>
+            Retype Password: <input type="password" name="rpass"><label id="seven"></label><br/>
+
+            <input type="reset">
+        </form>
+        <button type="submit" onClick="validateForm()">Send</button>
+        <button type="submit" onClick="closeWin()">Close</button>
+
+        <script>
+            var win;
+            function closeWin() {
+                win.close();
+            }
+
+            function validateForm() {
+                var fname = document.forms.myForm.fname.value;
+                if (fname == "") {
+                    document.getElementById("one").innerHTML = "Enter your name";
+                    return false;
+                } else if (fname.length < 8) {
+                    document.getElementById("one").innerHTML = "Enter 8 char";
+                    return false;
+                } else {
+                    document.getElementById("one").innerHTML = "";
+                }
+
+                var roll = document.forms.myForm.roll.value;
+                if (roll == "") {
+                    document.getElementById("two").innerHTML = "Enter your ID";
+                    return false;
+                } else if (roll.length < 5) {
+                    document.getElementById("two").innerHTML = "Enter 5 digit";
+                    return false;
+                } else {
+                    document.getElementById("two").innerHTML = "";
+                }
+
+                var gender = document.forms.myForm.gender.value;
+                if (gender == "") {
+                    document.getElementById("three").innerHTML = "Enter your gender";
+                    return false;
+                } else {
+                    document.getElementById("three").innerHTML = "";
+                }
+
+                var round = document.forms.myForm.round.value;
+                if (round == "Select a Round") {
+                    document.getElementById("four").innerHTML = "Enter your round";
+                    return false;
+                } else {
+                    document.getElementById("four").innerHTML = "";
+                }
+
+                var education = "";
+                if (document.forms.myForm.ssc.checked) {
+                    education += document.forms.myForm.ssc.value;
+                }
+                if (document.forms.myForm.hsc.checked) {
+                    education += document.forms.myForm.hsc.value;
+                }
+
+                if (!document.forms.myForm.ssc.checked && !document.forms.myForm.hsc.checked) {
+                    document.getElementById("five").innerHTML = "Enter your education";
+                    return false;
+                } else {
+                    document.getElementById("five").innerHTML = "";
+                }
+
+                var pass = document.forms.myForm.pass.value;
+                if (pass == "") {
+                    document.getElementById("six").innerHTML = "Enter your password";
+                    return false;
+                } else if (pass.length < 7) {
+                    document.getElementById("six").innerHTML = "Enter 7 digit";
+                    return false;
+                } else {
+                    document.getElementById("six").innerHTML = "";
+                }
+
+                var rpass = document.forms.myForm.rpass.value;
+                if (rpass == "") {
+                    document.getElementById("seven").innerHTML = "Retype password";
+                    return false;
+                } else if (document.forms.myForm.rpass.value != document.forms.myForm.pass.value) {
+                    document.getElementById("seven").innerHTML = "Password didn't match";
+                    return false;
+                } else {
+                    document.getElementById("seven").innerHTML = "";
+                    win = window.open("", "", "width=300,height=250,left=300");
+                    win.document.write("<h1>Output</h1>" + "<br/>");
+                    win.document.write(fname + "<br/>");
+                    win.document.write(roll + "<br/>");
+                    win.document.write(gender + "<br/>");
+                    win.document.write(round + "<br/>");
+                    win.document.write(education + "<br/>");
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -6,23 +6,22 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Finding prime number</title>
+        <title>Prime</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <script>
-            var x = parseInt(prompt("enter number", ""));
+            var x = parseInt(prompt("Enter number", ""));
             function isPrime(x) {
-                for (i = 2; i < x; i++)
+                for (var i = 2; i < x; i++)
                     if (x % i === 0)
                         return false;
                 return x !== 1 && x !== 0;
             }
             alert(isPrime(x));
-
             function printPrime(sn, en) {
-                for (sn = 2; sn <= en; sn++)
+                for (var sn = 2; sn <= en; sn++)
                     if (isPrime(sn)) {
                         document.write(sn + " is prime" + "<br/>");
                     } else {
