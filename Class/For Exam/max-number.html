@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Largest Number</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var a = parseInt(prompt("Enter 1st number",""));
+            var b = parseInt(prompt("Enter 2nd number",""));
+            var c = parseInt(prompt("Enter 3rd number",""));
+            
+            if(a>b && a>c){
+            alert(a + " is the largest");
+            }else if (b>a && b>c){
+            alert(b + " is the largest");
+            }else if(c>a && c>b){
+            alert(c + " is the largest");
+            }else if(a>b && a==c){
+            alert("Both " + a + " and " + c + " is equal");
+            }else if(a>c && a==b){
+            alert("Both " + a + " and " + b + " is equal");
+            }else if(b>a && b==c){
+            alert("Both " + b + " and " + c + " is equal");
+            }else if(b>c && b==a){
+            alert("Both " + b + " and " + a + " is equal");
+            }else if(c>a && c==b){
+            alert("Both " + c + " and " + b + " is equal");
+            }else if(c>b && c==a){
+            alert("Both " + c + " and " + a + " is equal");
+            }else{
+            alert("Everyone is equal");
+            }
+            document.write(a + "<br/>" + b + "<br/>" + c);
+        </script>
+    </body>
+</html>

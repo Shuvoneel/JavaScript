@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Increment-Decrement</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Increment-Decrement using For/While/Do-While Loop</h1>
+        <script>
+            //Decrement by 50 using For loop.........................
+            var a = 1000;
+            var b = 1;
+            function printF() {
+                for (a; a >= b; a -= 50) {
+                    document.write("Decrement: " + a + "<br/>");
+                }
+            }
+            printF(a, b);
+            document.write("<hr/>");
+
+            //Decrement by 50 using While loop.........................
+            var m = 1000;
+            var n = 1;
+            function printW(m, n) {
+                while (m >= n) {
+                    document.write("Decrement: " + m + "<br/>");
+                    m -= 50;
+                }
+            }
+            printW(m, n)
+            document.write("<hr/>");
+
+            //Decrement by 50 using Do-While loop.........................
+            var p = 1000;
+            var q = 1;
+            function printD(p, q) {
+                do {
+                    document.write("Decrement: " + p + "<br/>");
+                    p -= 50;
+                } while (p >= q);
+            }
+            printD(p, q);
+        </script>
+    </body>
+</html>

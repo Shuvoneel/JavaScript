@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+	<title> Max-Min</title>
+</head>
+
+	<body>
+		<h1> Finding Maximum & Minimum Numbers</h1>
+		<script>
+			var i,n;
+			var max = 0;
+			var min = 0;
+
+			n = parseInt(prompt("Enter array size"));
+			var a = new Array(n);
+
+			for(i=0;i<n;i++){
+			a[i] = parseInt(prompt("Enter numbers"));
+			}
+
+			// finding Maximum ......................
+			max = a[0];
+			for(i=1;i<n;i++){
+			if(max<a[i])
+			max = a[i];
+			}
+
+			// finding Minimum .......................
+			min = a[0];
+			for(i=1;i<n;i++){
+			if(min>a[i])
+			min = a[i];
+			}
+
+			document.write("Maximum Number = " + max + "<br>");
+			document.write("Minimum Number = " + min + "<br>");
+			
+		</script>
+	</body>
+</html>
