@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Prime</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var x = parseInt(prompt("Enter number", ""));
+            function isPrime(x) {
+                for (var i = 2; i < x; i++)
+                    if (x % i === 0)
+                        return false;
+                return x !== 1 && x !== 0;
+            }
+            alert(isPrime(x));
+
+            function printSum(sn, en) {
+                var sum = 0;
+                for (sn = 2; sn < en; sn++) {
+                    if (isPrime(sn)) {
+                        sum += sn;
+                    }
+                }
+                return sum;
+            }
+            document.write(printSum(1, 100));
+        </script>
+    </body>
+</html>

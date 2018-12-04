@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Email</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form name="myMail">
+            Email: <input type="email" name="email"><label id="mail"></label> <br/>
+            Education: <input type="checkbox" name="ssc" value="SSC">SSC
+            <input type="checkbox" name="hsc" value="HSC">HSC<label id="edu"></label> <br/>
+            Password: <input type="password" name="pass"><label id="pas"></label> <br/>
+            Confirm Password: <input type="password" name="cpass"><label id="con"></label> <br/>
+
+            <input type="reset">
+        </form>
+        <button type="submit" onClick="valMail()">Send</button>
+        <button type="submit" onClick="closwWin()">Close</button>
+
+        <script>
+            var win;
+            function closwWin() {
+                win.close();
+            }
+
+            function valMail() {
+                var email = document.forms.myMail.email.value;
+                var atpos = email.indexOf("@");
+                var dotpos = email.lastIndexOf(".");
+
+                if (email == "") {
+                    document.getElementById("mail").innerHTML = "Enter your email";
+                    return false;
+                } else if (atpos < 2 || dotpos < atpos + 2 || dotpos + 2 >= email.length) {
+                    document.getElementById("mail").innerHTML = "Enter a valid email";
+                    return false;
+                } else {
+                    document.getElementById("mail").innerHTML = "";
+                }
+
+                var education = "";
+                if (document.forms.myMail.ssc.checked) {
+                    education += document.forms.myMail.ssc.value;
+                }
+                if (document.forms.myMail.hsc.checked) {
+                    education += document.forms.myMail.hsc.value;
+                }
+                if (!document.forms.myMail.ssc.checked && !document.forms.myMail.hsc.checked) {
+                    document.getElementById("edu").innerHTML = "Enter your education";
+                    return false;
+                } else {
+                    document.getElementById("edu").innerHTML = "";
+                }
+
+                var pass = document.forms.myMail.pass.value;
+                if (pass.length < 7) {
+                    document.getElementById("pas").innerHTML = "Enter 7 digit password";
+                    return false;
+                } else {
+                    document.getElementById("pas").innerHTML = "";
+                }
+
+                var cpass = document.forms.myMail.cpass.value;
+                if (cpass != pass) {
+                    document.getElementById("con").innerHTML = "Password didn't match";
+                    return false;
+                } else {
+                    document.getElementById("con").innerHTML = "";
+                    win = window.open("", "", "width=300,height=250,left=250");
+                    win.document.write("<h1>Output</h1>" + "<br/>");
+                    win.document.write(email + "<br/>");
+                    win.document.write(education + "<br/>");
+                }
+            }
+        </script>
+    </body>
+</html>

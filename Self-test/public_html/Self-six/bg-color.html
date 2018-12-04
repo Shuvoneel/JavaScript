@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Background Color</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form>
+            Background:
+            <input type="radio" name="background" onClick="document.bgColor = 'blue'">
+            <input type="radio" name="background" onClick="document.bgColor = 'green'">
+            <input type="radio" name="background" onClick="document.bgColor = 'red'">
+        </form>
+        <form>
+            Background:
+            <select>
+                <option selected="">Select your color</option>
+                <option onClick="document.bgColor = 'black'">Black</option>
+                <option onClick="document.bgColor = 'yellow'">Yellow</option>
+                <option onClick="document.bgColor = 'Purple'">Purple</option>
+            </select>
+        </form>
+    </body>
+</html>

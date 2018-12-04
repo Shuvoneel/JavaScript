@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form name="myForm">
+            Fullname: <input type="text" name="fname"><label id="one"></label> <br/>
+            Gender: <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<label id="two"></label> <br/>
+            Education: <input type="checkbox" name="ssc" value="SSC">SSC
+            <input type="checkbox" name="hsc" value="HSC">HSC<label id="three"></label> <br/>
+
+            <input type="reset">
+        </form>
+        <button type="submit" onClick="valForm()">Send</button>
+        <button type="submit" onClick="closeWin()">Close</button>
+
+        <script>
+            var win;
+            function closeWin() {
+                win.close();
+            }
+
+            function valForm() {
+                var fname = document.forms.myForm.fname.value;
+                if (fname.length < 7) {
+                    document.getElementById("one").innerHTML = "Enter 7 digit name";
+                    return false;
+                } else {
+                    document.getElementById("one").innerHTML = "";
+                }
+
+                var gender = document.forms.myForm.gender.value;
+                if (gender == "") {
+                    document.getElementById("two").innerHTML = "Enter your gender";
+                    return false;
+                } else {
+                    document.getElementById("two").innerHTML = "";
+                }
+                var education="";
+                if(document.forms.myForm.ssc.checked){
+                    education += document.forms.myForm.ssc.value;
+                }
+                if(document.forms.myForm.hsc.checked){
+                    education += document.forms.myForm.hsc.value;
+                }
+                if(!document.forms.myForm.ssc.checked && !document.forms.myForm.hsc.checked){
+                    document.getElementById("three").innerHTML = "Enter your education";
+                    return false;
+                }else{
+                    document.getElementById("three").innerHTML ="";
+                    win = window.document.open("", "", "width=250,left=250");
+                    win.document.write(fname + "<br/>");
+                    win.document.write(gender + "<br/>");
+                    win.document.write(education + "<br/>");
+                }
+            }
+        </script>
+    </body>
+</html>
