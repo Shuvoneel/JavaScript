@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Form Validation</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            label{
+                padding-left: 20px;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="myForm">
+            Name: <input type="text" name="fname"><label id="one"></label><br/>
+            Contact: <input type="number" name="contact"><label id="two"></label><br/>
+            Gender: <input type="radio" name="gender" value="Male">Male
+            <input type="radio" name="gender" value="Female">Female<label id="three"></label><br/>
+            Education: <input type="checkbox" name="ssc" value="SSC ">SSC
+            <input type="checkbox" name="hsc" value="HSC ">HSC
+            <input type="checkbox" name="bba" value="BBA ">BBA
+            <input type="checkbox" name="mba" value="MBA">MBA<label id="four"></label><br/>
+            Location: <select name="location">
+                <option selected="">Select a Location</option>
+                <option>Banani</option>
+                <option>Dhanmondi</option>
+                <option>Mirpur</option>
+            </select><label id="five"></label><br/>
+            Remarks: <textarea name="msg"></textarea><label id="six"></label><br/>
+
+        </form>
+        <button type="submit" onClick="validateForm()">Send</button>
+        <button type="submit" onClick="closeWin()">Close</button>
+
+        <script>
+            var win;
+            function closeWin() {
+                win.close();
+            }
+
+            function validateForm() {
+                var fname = document.forms.myForm.fname.value;
+                if (fname == "") {
+                    document.getElementById("one").innerHTML = "What's your name?";
+                    return false;
+                } else if (fname.length < 10) {
+                    document.getElementById("one").innerHTML = "Name must contain 10 characters";
+                    return false;
+                } else {
+                    document.getElementById("one").innerHTML = "";
+                }
+
+                var contact = document.forms.myForm.contact.value;
+
+                if (contact.length < 11) {
+                    document.getElementById("two").innerHTML = "Number must contain 11 digits";
+                    return false;
+                } else {
+                    document.getElementById("two").innerHTML = "";
+                }
+
+                var gender = document.forms.myForm.gender.value;
+
+                if (gender == "") {
+                    document.getElementById("three").innerHTML = "What's your gender?";
+                    return false;
+                } else {
+                    document.getElementById("three").innerHTML = "";
+                }
+
+                var education = "";
+                if (document.forms.myForm.ssc.checked) {
+                    education += document.forms.myForm.ssc.value;
+                }
+                if (document.forms.myForm.hsc.checked) {
+                    education += document.forms.myForm.hsc.value;
+                }
+                if (document.forms.myForm.bba.checked) {
+                    education += document.forms.myForm.bba.value;
+                }
+                if (document.forms.myForm.mba.checked) {
+                    education += document.forms.myForm.mba.value;
+                }
+
+                if (!document.forms.myForm.ssc.checked && !document.forms.myForm.hsc.checked && !document.forms.myForm.bba.checked && !document.forms.myForm.mba.checked) {
+                    document.getElementById("four").innerHTML = "What's your education?";
+                    return false;
+                } else {
+                    document.getElementById("four").innerHTML = "";
+                }
+
+
+                var location = document.forms.myForm.location.value;
+
+                if (location == "Select a Location") {
+                    document.getElementById("five").innerHTML = "What's your location?";
+                    return false;
+                } else {
+                    document.getElementById("five").innerHTML = "";
+                }
+
+                var msg = document.forms.myForm.msg.value;
+
+                if (msg == "") {
+                    document.getElementById("six").innerHTML = "Enter your message";
+                    return false;
+                } else if (msg.length < 10) {
+                    document.getElementById("six").innerHTML = "Messsage must be 10 characters long";
+                    return false;
+                } else {
+                    document.getElementById("six").innerHTML = "";
+                    win = window.open("", "", "width=300,height=250,left=300");
+                    win.document.write("<h1>Output</h1>" + "<br/>");
+                    win.document.write("Name: " + fname + "<br/>");
+                    win.document.write("Contact: " + contact + "<br/>");
+                    win.document.write("Gender: " + gender + "<br/>");
+                    win.document.write("Education: " + education + "<br/>");
+                    win.document.write("Location: " + location + "<br/>");
+                    win.document.write("Remarks: " + msg + "<br/>");
+                }
+            }
+        </script>
+    </body>
+</html>
