@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Print 1 - 100 (odd-even & divided by 5) using while loop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var sn = 1;
+            var en = 10;
+            function makeSum(sn, en) {
+                while (sn <= en) {
+                    if (sn % 2 == 1) {
+                        document.write("odd number " + sn + "<br/>");
+                    } else {
+                        document.write("even number " + sn + "<br/>");
+                    }
+                    sn++;
+                }
+            }
+            makeSum(sn, en);
+            document.write("<hr/>");
+
+            var a = 1;
+            var b = 100;
+            function makeLum(a, b) {
+                while (a <= b) {
+                    if (a % 5 == 1) {
+                        document.write("number divided by 5 " + a + "<br/>");
+                    } else {
+                        document.write("other number " + a + "<br/>");
+                    }
+                    a++;
+                }
+            }
+            makeLum(a, b);
+        </script>
+    </body>
+</html>

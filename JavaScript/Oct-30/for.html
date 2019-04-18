@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Print 1 - 10 using for loop</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var sum = 0;
+            var sn = parseInt(prompt("1st number", ""));
+            var en = parseInt(prompt("2nd number", ""));
+            function makeSum(sn, en) {
+                for (sn; sn <= en; sn++) {
+                    sum += sn;
+                }
+                return sum;
+            }
+            alert(makeSum(sn, en));
+        </script>
+    </body>
+</html>
